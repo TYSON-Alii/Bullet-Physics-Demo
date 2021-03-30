@@ -274,7 +274,7 @@ while (window.isOpen())
     glPushMatrix();
     box2->getMotionState()->getWorldTransform(trans);
     trans.getOpenGLMatrix(matrix);
-    glMultMatrixf(matrix);
+    glMultMatrixd(matrix);
     glBegin(GL_QUADS);
     glColor3f(r_r-0.4,r_g-0.1,r_b+0.2);
     glTexCoord2d(0,0);
@@ -388,7 +388,7 @@ while (window.isOpen())
     glPushMatrix();
     h_body->getMotionState()->getWorldTransform(b_trans);
     b_trans.getOpenGLMatrix(matrix);
-    glMultMatrixf(matrix);
+    glMultMatrixd(matrix);
     glPopMatrix();
     window.display();
 }
@@ -404,32 +404,10 @@ static void sekiller(void)
 
     glLoadIdentity();
     glTranslatef(wx,wy,wz);
-    glBegin(GL_QUADS);
+    glBegin(GL_POINTS);
     glColor3f(0,0,0);
-    glVertex3f(0.1,-0.10,0.10);
-    glVertex3f(0.1,-0.10,-0.10);
-    glVertex3f(-0.10,-0.10,-0.10);
-    glVertex3f(-0.10,-0.10,0.10);
-    glVertex3f(0.10,0.10,0.10);
-    glVertex3f(0.10,0.10,-0.10);
-    glVertex3f(-0.10,0.10,-0.10);
-    glVertex3f(-0.10,0.10,0.10);
-    glVertex3f(0.10,0.10,0.10);
-    glVertex3f(0.10,-0.10,0.10);
-    glVertex3f(-0.10,-0.10,0.10);
-    glVertex3f(-0.10,0.10,0.10);
-    glVertex3f(0.10,0.10,-0.10);
-    glVertex3f(0.10,-0.10,-0.10);
-    glVertex3f(-0.10,-0.10,-0.10);
-    glVertex3f(-0.10,0.10,-0.10);
-    glVertex3f(-0.10,0.10,-0.10);
-    glVertex3f(-0.10,0.10,0.10);
-    glVertex3f(-0.10,-0.10,0.10);
-    glVertex3f(-0.10,-0.10,-0.10);
-    glVertex3f(0.10,0.10,-0.10);
-    glVertex3f(0.10,0.10,0.10);
-    glVertex3f(0.10,-0.10,0.10);
-    glVertex3f(0.10,-0.10,-0.10);
+    glVertex3f(0,0,0);
+
     glEnd();
     glFlush();
 }
